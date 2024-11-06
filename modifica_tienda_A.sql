@@ -11,7 +11,7 @@ ALTER TABLE stock ADD (
     beneficio NUMBER(2)
 );
 
-ALTER TABLE stock ADD CONSTRAINT beneficio_chk CHECK (beneficio BETWEEN 1 AND 5);
+ALTER TABLE stock ADD CONSTRAINT beneficio_CHK CHECK (beneficio BETWEEN 1 AND 5);
 
 -- En la tabla PRODUCTO - Eliminar de la tabla producto la columna Descripción.
 ALTER TABLE producto DROP COLUMN description;
@@ -21,7 +21,7 @@ ALTER TABLE producto ADD (
     perecedero CHAR   
 );
 
-ALTER TABLE producto ADD CONSTRAINT perecedero_chk CHECK (perecedero IN ('S', 'N'));
+ALTER TABLE producto ADD CONSTRAINT perecedero_CHK CHECK (perecedero IN ('S', 'N'));
 
 -- En la tabla PRODUCTO - Modificar el tamaño de la columna Denoproducto a 50.
 ALTER TABLE producto MODIFY (
@@ -34,10 +34,10 @@ ALTER TABLE familia ADD (
     iva NUMBER(2) NOT NULL
 );
 
-ALTER TABLE familia ADD CONSTRAINT iva_chk CHECK(iva IN (4, 10, 21));
+ALTER TABLE familia ADD CONSTRAINT iva_CHK CHECK(iva IN (4, 10, 21));
 
 -- En la tabla tienda
 -- -- La empresa desea restringir el número de tiendas con las que trabaja, de forma que no pueda haber 
 -- -- más de una tienda en una misma zona (la zona se identifica por el código postal). Definir mediante DDL las 
 -- -- restricciones necesarias para que se cumpla en el campo correspondiente.
-ALTER TABLE tienda ADD CONSTRAINT codigo_postal_unq UNIQUE (codigo_postal); 
+ALTER TABLE tienda ADD CONSTRAINT codigo_postal_UNQ UNIQUE (codigo_postal); 
